@@ -17,25 +17,26 @@ export class MyComponent {
       (this.last ? ` ${this.last}` : '')
     );
   }
-  addPerson(e) {
-    console.log(e);
+  addPerson() {
     this.numberPerson += 1;
 
   }
-  disPerson(e) {
-    console.log(e);
+  disPerson() {
     this.numberPerson -= 1;
     if (this.numberPerson < 0) {
       this.numberPerson = 0;
     }
-
+  }
+  resetPerson() {
+    this.numberPerson = 0;
   }
   render() {
     return [
       <div class="text-position text-color">{this.numberPerson}</div>,
       <div class="actions-container">
-        <button onClick={(event) => this.addPerson(event)}>เพิ่มจำนวนคน</button>
-        <button onClick={(event) => this.disPerson(event)}>ลดจำนวนคน</button>
+        <button onClick={() => this.addPerson()}>เพิ่มจำนวนคน</button>
+        <button onClick={() => this.disPerson()} disabled={this.numberPerson === 0}>ลดจำนวนคน</button>
+        <button onClick={() => this.resetPerson()} disabled={this.numberPerson === 0}>รีเซ็ทจำนวนคน</button>
       </div>
     ]
   }
