@@ -1,9 +1,9 @@
 {
-  "name": "my-component",
-  "version": "0.0.1",
+  "name": "num-person",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
-  "main": "dist/index.js",
+  "main": "dist/num-person.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
