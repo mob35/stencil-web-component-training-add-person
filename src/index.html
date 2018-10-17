@@ -5,11 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/mycomponent.js"></script>
+  <style>
+    .text-color {
+      color: #565656;
+    }
 
+    .text-position {
+      text-align: center;
+      font-size: x-large;
+    }
+
+    .verticel {
+      /* margin-top: 50%; */
+    }
+  </style>
 </head>
-<body>
-
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+<body class="verticel">
+  <div class="text-position text-color">จำนวนคน</div>
+  <person-component id="person" numberPerson="0"></person-component>
 
 </body>
 </html>

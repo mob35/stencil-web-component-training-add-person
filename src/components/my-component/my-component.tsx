@@ -1,7 +1,7 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'my-component',
+  tag: 'person-component',
   styleUrl: 'my-component.css',
   shadow: true
 })
@@ -9,7 +9,7 @@ export class MyComponent {
   @Prop() first: string;
   @Prop() middle: string;
   @Prop() last: string;
-
+  @State() numberPerson: number = 0;
   format(): string {
     return (
       (this.first || '') +
@@ -17,8 +17,26 @@ export class MyComponent {
       (this.last ? ` ${this.last}` : '')
     );
   }
+  addPerson(e) {
+    console.log(e);
+    this.numberPerson += 1;
 
+  }
+  disPerson(e) {
+    console.log(e);
+    this.numberPerson -= 1;
+    if (this.numberPerson < 0) {
+      this.numberPerson = 0;
+    }
+
+  }
   render() {
-    return <div>Hello, World! I'm {this.format()}</div>;
+    return [
+      <div class="text-position text-color">{this.numberPerson}</div>,
+      <div class="actions-container">
+        <button onClick={(event) => this.addPerson(event)}>เพิ่มจำนวนคน</button>
+        <button onClick={(event) => this.disPerson(event)}>ลดจำนวนคน</button>
+      </div>
+    ]
   }
 }

@@ -12,12 +12,12 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
+  interface PersonComponent {
     'first': string;
     'last': string;
     'middle': string;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
+  interface PersonComponentAttributes extends StencilHTMLAttributes {
     'first'?: string;
     'last'?: string;
     'middle'?: string;
@@ -26,26 +26,26 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'PersonComponent': Components.PersonComponent;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'person-component': Components.PersonComponentAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLPersonComponentElement extends Components.PersonComponent, HTMLStencilElement {}
+  var HTMLPersonComponentElement: {
+    prototype: HTMLPersonComponentElement;
+    new (): HTMLPersonComponentElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'person-component': HTMLPersonComponentElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'person-component': HTMLPersonComponentElement;
   }
 
 
